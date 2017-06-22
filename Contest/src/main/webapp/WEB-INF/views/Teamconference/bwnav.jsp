@@ -46,6 +46,7 @@ t_id = (String)session.getAttribute("t_id");
 %>
 <nav class="bwnavi">
 <p id="navsub">BrainWriting</p>
+<a href="home" class="navcategory">home</a>
 <a href="canvas?t_id=${t_id}" class="navcategory">Canvas</a>
 <a href="bwlist?t_id=${t_id}" class="navcategory" id="navproject" style="text-decoration:none;">My Project</a>
 <a href="bwcreate?t_id=${t_id}"  class="navcategory" style="text-decoration:none">Create</a>
