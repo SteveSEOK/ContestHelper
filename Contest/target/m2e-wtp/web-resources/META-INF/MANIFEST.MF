@@ -1,18 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: seonnote
-=======
-<<<<<<< HEAD
 Built-By: Kanye
 Build-Jdk: 1.8.0_131
-=======
-<<<<<<< HEAD
-Built-By: kccre
-=======
-Built-By: bon
->>>>>>> 447152bee0b9dd0593b527b3884c618d627226d7
->>>>>>> 2f792b74c843b193a5bc7d81f75aadd79ab0110e
-Build-Jdk: 1.8.0_121
->>>>>>> 353c1811236f85871a9cc54b482fc7f2a0b10c74
 Created-By: Maven Integration for Eclipse
 
