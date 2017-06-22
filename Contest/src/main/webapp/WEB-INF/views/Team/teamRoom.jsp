@@ -382,10 +382,8 @@ $(".app").on("click", function(){
 				<a href="ScheMain?tid=${sessionScope.team_id }"><button
 						id="conference" class="btn btn-danger">회의</button></a>
 				<br>
-				
-				<a href="canvas" class="navcategory">Home</a>
-				<a href="bwlist?t_id=${t_id}" class="navcategory" id="navproject" style="text-decoration:none;">My Project</a>
-				<a href="bwcreate?t_id=${t_id}" class="navcategory" style="text-decoration:none">Create</a>
+				<a href="bwlist?t_id=${t_id}&u_id=${sessionScope.u_id }" class="btn btn-default" id="navproject" style="text-decoration:none;">My Project</a>
+
 			</c:if>
 			
 			<c:if test="${Rights.m_rights == 3}">
