@@ -278,7 +278,7 @@ var times = ${times};
 					dataType: "text",
 					type : "post",
 					success: function(data){
-					//	alert("저장되었습니다.");
+						alert("저장되었습니다.");
 					},
 					error : function(data){
 						alert("저장실패");
