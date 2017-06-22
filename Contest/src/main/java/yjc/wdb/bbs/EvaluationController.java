@@ -111,7 +111,7 @@ public class EvaluationController {
 				service.firstCreate(list[i]);
 			else
 				service.create(list[i]);
-			if(list[i].getEp_how().equals("�긽�꽭梨꾩젏 諛⑸쾿"))
+			if(list[i].getEp_how().equals("상세채점 방법"))
 			how = list[i].getEp_how();
 			
 		}
@@ -158,8 +158,6 @@ public class EvaluationController {
 	public String manager(int t_id,Model model,@RequestParam int r_id, HttpSession session) throws Exception {
 		Manager m1 = service.epEl(t_id);
 		m1.setT_id(t_id);
-		int leader = tservice.leaderRights(t_id);
-		model.addAttribute("ClaimantVo",leader);
 		//c_id 諛쏄린
 		Manager manage =service.manager(t_id);
 		model.addAttribute("manage",manage);

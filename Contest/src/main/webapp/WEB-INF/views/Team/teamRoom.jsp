@@ -246,6 +246,8 @@ img{
 
 
 <div>
+<<<<<<< HEAD
+=======
 		<c:if test="${teamDate.t_permit == 2}">
 		
 			<c:if test="${Rights.m_rights == 1 || Rights.m_rights == 2}">
@@ -256,6 +258,7 @@ img{
 
 			</c:if>
 			
+>>>>>>> 353c1811236f85871a9cc54b482fc7f2a0b10c74
 			<c:if test="${Rights.m_rights == 3}">
 				<c:if test="${manage.ep_how==null}">
 					<button class="btn btn-default" id="evalPage">평가단계설정</button>
@@ -270,16 +273,7 @@ img{
 					<button class="btn btn-default" id="manager">평가매니저</button>
 				</c:if>
 			</c:if>
-		
-		</c:if>
-		
-
 	</div>
-
-
-
-
-
 
 	<script>
 		var formid = $("#formid");
