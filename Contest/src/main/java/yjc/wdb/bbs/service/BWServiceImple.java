@@ -28,9 +28,11 @@ public class BWServiceImple implements BWService{
 	}
 
 	@Override
-	public void regist2(IDEA i) throws Exception {
+	public void regist2(IDEA idea) throws Exception {
 		// TODO Auto-generated method stub
-		dao.idea(i);
+		System.out.println(idea.getBwi_content()+idea.getBwp_id()+idea.getU_id());
+		dao.idea(idea);
+		
 	}
 	@Override
 	public void ideaModify(IDEA i) throws Exception {

@@ -269,6 +269,7 @@ var times = ${times};
 				//alert(btclass);
 				//content.next().css("border" , "4px solid #f00");
 				//content.children("button").prev().prev().prop("disabled",true);
+				alert(pageread);
 				$.ajax({
 					url : "ideasub",
 					data : {bwi_content : IDEA_content,

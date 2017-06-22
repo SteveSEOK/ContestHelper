@@ -9,7 +9,7 @@ import yjc.wdb.bbs.bean.Page;
 public interface BWDAO {
 	public void bwcreate(BW vo) throws Exception;
 	public int bwpage(int bw_id) throws Exception;
-	public void idea(IDEA io) throws Exception;
+	public void idea(IDEA idea) throws Exception;
 	public void ideaModify(IDEA io) throws Exception;
 	public int bwread(IDEA idea)throws Exception;
 	public List<IDEA> bwlistpage(String bwp_id) throws Exception;
