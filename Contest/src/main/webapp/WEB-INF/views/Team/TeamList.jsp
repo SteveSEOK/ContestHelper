@@ -90,7 +90,6 @@
 			<c:if test="${num != 0 }">
 				<table>
 					<tr>
-						
 						<th>logo</th>
 						<th>팀명</th>
 						<c:if test="${Conlist == 3}">
