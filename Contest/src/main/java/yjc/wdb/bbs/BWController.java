@@ -21,7 +21,7 @@ import yjc.wdb.bbs.bean.IDEA;
 import yjc.wdb.bbs.bean.Page;
 import yjc.wdb.bbs.service.BWService;
 
-
+  
 @Controller
 public class BWController {
 	@Inject
