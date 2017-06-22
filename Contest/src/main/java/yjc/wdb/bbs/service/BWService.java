@@ -10,7 +10,7 @@ import yjc.wdb.bbs.bean.Page;
 public interface BWService {
 	public void bwregist(BW b)  throws Exception;
 	public int bwpage(int bw_id)  throws Exception;
-	public void regist2(IDEA i)  throws Exception;
+	public void regist2(IDEA idea)  throws Exception;
 	public void ideaModify(IDEA i)  throws Exception;
 	public int bwread(IDEA idea)  throws Exception;
 	public List<IDEA> bwlistpage(String bwp_id) throws Exception;

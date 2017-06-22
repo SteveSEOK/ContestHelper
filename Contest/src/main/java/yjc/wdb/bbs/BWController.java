@@ -92,7 +92,9 @@ public class BWController {
 	}
 	@RequestMapping(value="ideasub", method=RequestMethod.POST)
 	public ResponseEntity<String> ideasub(IDEA idea, RedirectAttributes rttr) throws Exception{
+		System.out.println(idea.getBwi_content()+idea.getBwp_id()+idea.getU_id());
 		service.regist2(idea);
+//		System.out.println(idea.getBwi_content()+idea.getBwp_id()+idea.getU_id());
 		//System.out.println(idea);
 		//System.out.println(idea.getIDEA_content());
 		rttr.addFlashAttribute("result","SUCCESS");

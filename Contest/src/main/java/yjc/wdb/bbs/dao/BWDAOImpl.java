@@ -34,9 +34,10 @@ private static final String namespace="yjc.wdb.bwMapper";
 	}
 
 	@Override
-	public void idea(IDEA io) throws Exception {
+	public void idea(IDEA idea) throws Exception {
 		// TODO Auto-generated method stub
-		sqlSession.insert(namespace+".idea", io );
+		System.out.println(idea.getBwi_content()+idea.getBwp_id()+idea.getU_id());
+		sqlSession.insert(namespace+".idea",idea);
 	}
 
 	@Override
