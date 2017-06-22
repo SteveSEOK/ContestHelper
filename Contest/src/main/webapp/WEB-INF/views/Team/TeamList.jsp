@@ -86,11 +86,9 @@
 			<c:if test="${num == 0 }">
 				현재 팀이 없습니다.
 			</c:if>
-			
 			<c:if test="${num != 0 }">
 				<table>
 					<tr>
-						
 						<th>logo</th>
 						<th>팀명</th>
 						<c:if test="${Conlist == 3}">

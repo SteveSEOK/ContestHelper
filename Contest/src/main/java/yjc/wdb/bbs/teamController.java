@@ -33,9 +33,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import yjc.wdb.bbs.bean.ClaimantVo;
+import yjc.wdb.bbs.bean.Manager;
 import yjc.wdb.bbs.bean.Member;
 import yjc.wdb.bbs.bean.TeamVo;
 import yjc.wdb.bbs.bean.Userbean;
+import yjc.wdb.bbs.service.EvaluationService;
 import yjc.wdb.bbs.service.TeamService;
 import yjc.wdb.bbs.service.memberService;
 import yjc.wdb.bbs.util.UploadFileUtil;
@@ -56,6 +58,8 @@ public class teamController {
 	private memberService service;
 	@Inject
 	private TeamService tservice;
+	@Inject
+	private EvaluationService eservice;
 	
 	@RequestMapping(value = "registTeam", method = RequestMethod.GET)
 	public String registForm(@RequestParam(value="Conlist",defaultValue="1")int Conlist, TeamVo vo, 
@@ -135,7 +139,7 @@ public class teamController {
 	}
 
 	
-	//�뜝�룞�삕 �뛾�룊�삕
+	//占쎈쐻占쎈짗占쎌굲 占쎈쎗占쎈즸占쎌굲
 	@RequestMapping(value = "teamRoom", method = RequestMethod.GET)
 	public String 	list(@RequestParam(value="t_id")int t_id,TeamVo vo,Model model, HttpSession session) throws Exception{
 		//TeamVo vo2 = new TeamVo();
@@ -162,7 +166,11 @@ public class teamController {
 		
 		model.addAttribute("ConlCount",ConlCount);
 		model.addAttribute("Colist",Colist);
-		
+		Manager manage = eservice.config(t_id);
+		if(manage!=null){
+		System.out.println("평가방법:"+manage.getEp_how());
+		model.addAttribute("manage",manage);
+		}
 		ClaimantVo vos = new ClaimantVo();
 		vos.setT_id(t_id);
 		List<ClaimantVo> list = tservice.teammember(vos);
@@ -170,7 +178,7 @@ public class teamController {
 		 return"Team/teamRoom";
 	}
 	
-	//嶺뚮ㅄ維��뜝占�? �뜝�룞�삕 �솻洹ｋ샍�굢�귦떊?�뜝�룞�삕�뜝占�?
+	//癲ル슢�뀈泳�占쏙옙�쐻�뜝占�? 占쎈쐻占쎈짗占쎌굲 占쎌녃域뱄퐢�깓占쎄덩占쎄랩�뻿?占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占�?
 	@RequestMapping(value = "AllTeamList", method = {RequestMethod.GET, RequestMethod.POST})
 	public String Teamlist(@RequestParam(value="Conlist",defaultValue="1")int Conlist,
 			@RequestParam(value="permit",defaultValue="1")int permit,
@@ -226,7 +234,7 @@ public class teamController {
 		
 	}
 	
-	//�뜝�럥爰뽩뜝�럥爰쀥뜝�럥彛� �뜝�룞�삕 �솻洹ｋ샍�굢�귦떊?�뜝�룞�삕�뜝占�?
+	//占쎈쐻占쎈윥�댆戮⑸쐻占쎈윥�댆�λ쐻占쎈윥壤쏉옙 占쎈쐻占쎈짗占쎌굲 占쎌녃域뱄퐢�깓占쎄덩占쎄랩�뻿?占쎈쐻占쎈짗占쎌굲占쎈쐻�뜝占�?
 		@RequestMapping(value = "myTeams", method = RequestMethod.GET)
 		public String MyTeamlist(TeamVo vo,Model model, HttpSession session) throws Exception{
 			String u_id = (String)session.getAttribute("u_id");
@@ -250,7 +258,7 @@ public class teamController {
 		return str;
 	}
 	
-	//�뤆�룊�삕�뜝�럩肉��뜝�럥六욜춯節륁삕
+	//占쎈쨬占쎈즸占쎌굲占쎈쐻占쎈윪�굢占쏙옙�쐻占쎈윥筌묒슌異�影�瑜곸굲
 	@RequestMapping(value="joinTeam", method = RequestMethod.POST)
 	@ResponseBody
 	public String joinTeam(TeamVo vo, HttpServletRequest req ,HttpSession session){
@@ -272,7 +280,7 @@ public class teamController {
 		return entity;
 	}
 	
-	//�뜝�럥六욜춯節륁삕�뜝�럩�겱 claimant
+	//占쎈쐻占쎈윥筌묒슌異�影�瑜곸굲占쎈쐻占쎈윪占쎄껑 claimant
 	@RequestMapping(value = "claimant", method = RequestMethod.GET)
 	public String claimants(@RequestParam(value="t_id",defaultValue="-1")int t_id,ClaimantVo vo,Model model, HttpSession session) throws Exception{
 		
@@ -288,7 +296,7 @@ public class teamController {
 	return"Team/claimant";
 	}
 	
-	//�뤆�룊�삕�뜝�럩肉��뜝�럥�빢�뜝�럩逾�
+	//占쎈쨬占쎈즸占쎌굲占쎈쐻占쎈윪�굢占쏙옙�쐻占쎈윥占쎈묄占쎈쐻占쎈윪�억옙
 	@RequestMapping(value="userOk", method = RequestMethod.POST)
 	@ResponseBody
 	public String userOk(ClaimantVo vo, HttpServletRequest req ,HttpSession session) throws Exception{
@@ -315,7 +323,7 @@ public class teamController {
 	}
 	
 	
-	//�뤆�룊�삕�뜝�럩肉�濾곌쑨��?�뜝�룞�삕
+	//占쎈쨬占쎈즸占쎌굲占쎈쐻占쎈윪�굢占쏙쫫怨뚯뫅占쏙옙?占쎈쐻占쎈짗占쎌굲
 		@RequestMapping(value="userNo", method = RequestMethod.POST)
 		@ResponseBody
 		public String userNo(ClaimantVo vo, HttpServletRequest req ,HttpSession session){
@@ -338,7 +346,7 @@ public class teamController {
 
 			return entity;
 		}
-		//�뜝�럡�돮�뜝�럥�떄
+		//占쎈쐻占쎈윞占쎈룼占쎈쐻占쎈윥占쎈뻹
 		@RequestMapping(value="dropoutTeam", method = RequestMethod.POST)
 		@ResponseBody
 		public String dropoutTeam(TeamVo vo, HttpServletRequest req ,HttpSession session)throws Exception{
@@ -352,7 +360,7 @@ public class teamController {
 
 			return entity;
 		}
-		//�뜝�룞�삕�뜝�럡留믣뜝�럡臾�
+		//占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈윞筌띾�ｋ쐻占쎈윞�눧占�
 				@RequestMapping(value="Recruitcont", method = RequestMethod.POST)
 				@ResponseBody
 				public String Recruitcont(TeamVo vo, HttpServletRequest req ,HttpSession session){
