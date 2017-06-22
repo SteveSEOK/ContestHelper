@@ -31,7 +31,7 @@
 <br>
 
    
-<jsp:include page="../Member/top.jsp"></jsp:include>
+<jsp:include page="../screen/top.jsp"></jsp:include>
      
 <div class="container" style="margin:30px 400px" >
 

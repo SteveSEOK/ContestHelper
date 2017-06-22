@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 
 
-    <link rel="StyleSheet" href="resources/css/100.css" />
+    <link rel="StyleSheet" href="${pageContext.request.contextPath }/resources/css/100.css" />
     <link rel="shortcut icon" href="http://i.jobkorea.kr/contest/images/Common/RB2.ico" />
 
    
@@ -53,26 +53,27 @@
 
 
 <ul class="gnb" id="devGnb" >
-<li class="lank ">  <a href="./home"><img src="../resources/images/logo.JPG" style="height:50px;border-radius: 50%;" ></a>
+<li class="lank ">  <a href="../home"><img src="${pageContext.request.contextPath }/resources/images/logo.JPG" style="height:50px;border-radius: 50%;" ></a>
                     </li>
     <li id="devGnbMenuContest" class="info on devActive">
         <a id="devGnbMenuAllBtn" href="contestList" class="mn">공모전 현황<span></span></a>
         
     </li>
-    <li class="lank ">   <a href="AllTeamList?Conlist=1&permit=1" class="mn">공모전 팀모집</a>
+    <li class="lank ">   <a href="../AllTeamList?Conlist=1&permit=1" class="mn">공모전 팀모집</a>
                     </li>
-    <li class="pool" style="width:100px;"><a href="registTeam?Conlist=3" class="mn">개최하기</a>
+    <li class="pool" style="width:70px;"><a href="../registTeam?Conlist=3" class="mn">개최하기</a>
                     </li>
-    <li class="my "> <a href="AllTeamList?Conlist=3&permit=1" class="mn">심사위원 모집</a></li>
-    <li class="host "><a href="AllTeamList?Conlist=0&permitt=1" class="mn">Team</a>
+    <li class="my "> <a href="../AllTeamList?Conlist=3&permit=1" class="mn">심사위원 모집</a></li>
+    <li class="host "><a href="../AllTeamList?Conlist=0&permitt=1" class="mn">Team</a>
 			</li>
 <li class="host ">
-                        <a href="AllTeamList?Conlist=0&permit=2" class="mn">Team Work</a>
+                        <a href="../AllTeamList?Conlist=0&permit=2" class="mn">Team Work</a>
                     </li>
 			<li class="host ">
                         <a href="listPage" class="mn">커뮤니티</a>
+                    
                     </li>
-                     <li class="pool" style="width:80px;">
+                     <li class="pool" style="width:80px; margin:-50px 890px">
                        <a href="PlaceList" class="mn" >장소대여</a>
                     </li>
 </ul>

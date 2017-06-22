@@ -86,7 +86,6 @@ e here</title>
 </style>
 </head>
 <body>
-	<c:if test="${ClaimantVo == 3}">
 		<div id="confirm_content" style="display: none">
 			<div class="confirmModal_content">
 				현재 단계의 평가가 완료 되었습니다.<br>다음 평가를 진행하시겠습니까?
@@ -98,7 +97,6 @@ e here</title>
 					data-confirmmodal-but="cancel">Cancel</button>
 			</div>
 		</div>
-	</c:if>
 	<form>
 		<input type='hidden' name='r_id' id='r_id' value='${r_id}'> 
 		<input type="hidden" name="t_id" id="t_id" value="${t_id}">
